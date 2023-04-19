@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const makeHeaderSticky = () => {
 		let scrollTop = window.scrollY;
-		let stickyStartPosition = main.offsetHeight / 4;
+		let stickyStartPosition = main.offsetHeight / 10;
 
 		if (scrollTop >= stickyStartPosition) {
 			header.classList.add('sticky');

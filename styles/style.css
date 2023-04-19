@@ -43,7 +43,7 @@ body {
 html,
 body {
 	width: 100vw;
-	height: 100%;
+	min-height: 100%;
 	font-family: 'inter', Arial, Helvetica, sans-serif;
 	background-color: rgb(90, 34, 102);
 	background: linear-gradient(
@@ -80,11 +80,13 @@ body {
 .hidden {
 	display: none;
 }
-.sticky {
+.header.sticky {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background-color: rgba(46, 49, 146, 0.46);
+	padding-top: var(--margin-inner);
+	padding-bottom: var(--margin-inner);
+	background-color: rgb(0, 0, 0, 0.5);
 }
 .header {
 	justify-content: space-between;
