@@ -11,23 +11,22 @@
 			rel="stylesheet"
 			href="./styles/media.css"
 		/>
+		<script src="./components/form.js"></script>
 	</head>
 	<body>
 		<header id="header" class="header">
 			<span class="header__logo"><a href="" class="link-reset">LOGO</a></span>
-			<div class="header__burger-container">
+			<label for="toggle-menu" class="burger__label">
 				<input
-					type="checkbox"
 					class="header__burger burger"
+					type="checkbox"
 					id="toggle-menu"
 					aria-label="Menu"
 				/>
-				<div class="burger__lines">
-					<span class="burger__line burger__line1"></span>
-					<span class="burger__line burger__line2"></span>
-					<span class="burger__line burger__line3"></span>
-				</div>
-			</div>
+				<span class="burger__line burger__line1"></span>
+				<span class="burger__line burger__line2"></span>
+				<span class="burger__line burger__line3"></span>
+			</label>
 			<nav class="header__nav nav">
 				<ul class="nav-list nav__list list-reset">
 					<li class="nav-list__item">
@@ -183,12 +182,12 @@
 						</li>
 						<li class="contacts-list__item">
 							<p class="contacts-list__text--large">E-mail</p>
-							<p class="contacts-list__text">[Company email]</p>
+							<a class="contacts-list__link link-reset" href="mailto:ff"
+								>[Company email]</a
+							>
 						</li>
 						<li class="contacts-list__item contacts-list__item--filled">
-							<button
-								class="open-form contacts-list__link link--filled btn-reset"
-							>
+							<button class="open-form link--filled btn-reset">
 								Contact form
 							</button>
 						</li>
@@ -198,38 +197,9 @@
 			<footer class="footer">
 				<p class="footer__text">[Company name] © 2023. All rights reserved</p>
 			</footer>
+			<div class="highlight"></div>
 		</div>
-		<div class="modal hidden">
-			<form action="" class="contact-form" id="contact-form">
-				<button
-					class="modal__close-btn btn-reset"
-					aria-label="Close contact form"
-				></button>
-				<input
-					id="name"
-					name="name"
-					class="contact-form__input"
-					type="text"
-					placeholder="name"
-				/>
-				<input
-					id="email"
-					name="email"
-					class="contact-form__input"
-					type="text"
-					placeholder="email"
-				/>
-				<textarea
-					id="message"
-					name="message"
-					class="contact-form__textarea"
-					placeholder="message"
-				></textarea>
-				<button type="submit" class="contact-form__btn link--filled btn-reset">
-					Submit
-				</button>
-			</form>
-		</div>
+		<contact-form></contact-form>
 		<script src="./script/main.js"></script>
 	</body>
 </html>

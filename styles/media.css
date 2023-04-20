@@ -23,59 +23,41 @@
 		margin-right: 0;
 		margin-bottom: var(--margin-inner);
 	}
-	.header__burger-container {
-		display: block;
-		position: relative;
-		height: 30px;
-		width: 40px;
-		z-index: 10;
-	}
-	.header__burger-container:hover > .header__burger-lines > .burger__line {
-		background-color: #cecece;
-	}
-	.header__burger {
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 5;
-		opacity: 0;
-		cursor: pointer;
-	}
-	.burger__lines {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 2;
+	.burger__label {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		width: 40px;
+		cursor: pointer;
 	}
-	.burger__lines .burger__line {
-		display: block;
-		height: 4px;
-		width: 100%;
+	.burger__line {
+		background-color: var(--color-text);
 		border-radius: 10px;
-		background: #fff;
-		transition: background 0.3s ease-in-out;
+		height: 4px;
+		margin: 4px 0;
+		transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 	}
-	.burger__lines .burger__line .burger__line1,
-	.burger__lines .burger__line .burger__line2,
-	.burger__lines .burger__line .burger__line3 {
-		transition: transform 0.3s ease-in-out;
+	.burger__line1 {
+		width: 50%;
 	}
-	.burger__lines.is-active .burger__line1 {
-		transform: rotate(-45deg) translate(-4px, 11px);
+	.burger__line2 {
+		width: 100%;
 	}
-	.burger__lines.is-active .burger__line2 {
-		transform: scaleY(0);
+	.burger__line3 {
+		width: 75%;
 	}
-	.burger__lines.is-active .burger__line3 {
-		transform: rotate(45deg) translate(-7px, -14px);
+	.header__burger:checked ~ .burger__line1 {
+		transform-origin: bottom;
+		transform: rotateZ(45deg) translate(6px, 0);
+	}
+	.header__burger:checked ~ .burger__line2 {
+		transform-origin: top;
+		transform: rotateZ(-45deg);
+	}
+
+	.header__burger:checked ~ .burger__line3 {
+		transform-origin: bottom;
+		width: 50%;
+		transform: translate(19px, -6px) rotateZ(45deg);
 	}
 	.about {
 		flex-direction: column;

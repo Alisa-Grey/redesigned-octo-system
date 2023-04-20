@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const makeHeaderSticky = () => {
 		let scrollTop = window.scrollY;
-		let stickyStartPosition = main.offsetHeight / 10;
+		let stickyStartPosition = header.offsetHeight;
 
 		if (scrollTop >= stickyStartPosition) {
 			header.classList.add('sticky');
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 	// menu
 	document.querySelector('#toggle-menu').addEventListener('click', function () {
-		document.querySelector('.burger__lines').classList.toggle('is-active');
 		document.querySelector('.nav').classList.toggle('is-active');
 	});
 });
