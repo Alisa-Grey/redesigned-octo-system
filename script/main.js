@@ -64,9 +64,46 @@ contactFormBtns.forEach((button) =>
 	})
 );
 closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+window.addEventListener('click', (e) => {
+	if (e.target === modal) modal.classList.add('hidden');
+});
 // form
+const inputs = Array.from(document.querySelectorAll('.contact-form__input'));
 const form = document.querySelector('#contact-form');
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	modal.classList.add('hidden');
+	let errors = [];
+	inputs.forEach((input) => {
+		let error = showError(input);
+		console.log('error', error);
+		if (error) errors.push(error);
+	});
+	if (!errors.length) {
+		modal.classList.add('hidden');
+	}
 });
+// validate form
+let hasError = false;
+function showError(field) {
+	const errorMessage = document.getElementById(`${field.id + '-error'}`);
+	if (field.value.trim() === '') {
+		field.classList.add('error');
+		errorMessage.textContent = 'Field can not be empty';
+		errorMessage.classList.add('active');
+		return (hasError = true);
+	} else if (field.validity.typeMismatch) {
+		field.classList.add('error');
+		errorMessage.textContent = 'Please enter a valid email address';
+		errorMessage.classList.add('active');
+		return (hasError = true);
+	}
+	return (hasError = false);
+}
+inputs.forEach((input) =>
+	input.addEventListener('input', (e) => {
+		const errorMessage = document.getElementById(`${input.id + '-error'}`);
+		input.classList.remove('error');
+		errorMessage.textContent = '';
+		errorMessage.classList.remove('active');
+	})
+);

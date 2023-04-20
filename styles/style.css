@@ -25,6 +25,7 @@
 	--color-link: #d1d1d1;
 	--color-light: #fff;
 	--color-dark-blue: rgba(1, 1, 7, 0.47);
+	--color-error: #ff5722;
 	--gap: 30px;
 	--margin-outer: 60px;
 	--margin-inner: 15px;
@@ -225,10 +226,9 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--margin-inner);
-	gap: 10px;
+	padding: var(--gap) var(--margin-inner);
 	width: 260px;
-	min-height: 240px;
+	min-height: 200px;
 	border: 1px solid rgba(29, 40, 56, 0.5);
 	box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
 	border-radius: 40px;
@@ -334,6 +334,10 @@ body {
 	border: rgba(93, 93, 193, 0.88);
 	border-radius: 15px;
 	z-index: 3;
+}
+.contact-form__input.error,
+.contact-form__textarea.error {
+	outline: 2px solid var(--color-error);
 }
 .contact-form__input::placeholder,
 .contact-form__textarea::placeholder {
@@ -477,3 +481,57 @@ body {
 	z-index: 0;
 	opacity: 0.5;
 } */
+
+.tooltiptext {
+	position: absolute;
+	visibility: hidden;
+	width: 120px;
+	margin-left: -60px;
+	padding: 5px 0;
+	background-color: #ff5757;
+	border-radius: 6px;
+	color: #fff;
+	text-align: center;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.3s;
+	font-size: 14px;
+}
+.tooltiptext#name-error {
+	left: 3%;
+	bottom: 85%;
+}
+.tooltiptext#email-error {
+	left: -1%;
+	bottom: 60%;
+}
+.tooltiptext#message-error {
+	left: -1%;
+	bottom: 46%;
+}
+.tooltiptext::after {
+	border: solid transparent;
+	content: ' ';
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-width: 6px;
+	margin-left: -6px;
+}
+.tooltiptext#name-error::after {
+	bottom: -26%;
+	left: 88%;
+	border-top-color: var(--color-error);
+}
+.tooltiptext#email-error::after,
+.tooltiptext#message-error::after {
+	bottom: 23%;
+	left: 105%;
+	border-left-color: var(--color-error);
+}
+.tooltiptext.active {
+	visibility: visible;
+	opacity: 0.9;
+}

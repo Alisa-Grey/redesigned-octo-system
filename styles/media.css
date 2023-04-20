@@ -127,7 +127,7 @@
 		padding-left: var(--margin-inner);
 	}
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
 	.nav {
 		width: 80vw;
 	}
@@ -171,13 +171,39 @@
 	.projects-list {
 		grid-template-columns: repeat(1, 85vw);
 	}
+	.projects-item {
+		border-radius: 20px;
+	}
 	.project__img {
 		width: 80vw;
 	}
 	.project-item__img {
-		width: 80%;
+		width: 100%;
 	}
 	.projects-item__heading {
 		font-size: 24px;
+	}
+	.tooltiptext {
+		z-index: 5;
+		opacity: 0.9;
+	}
+	.tooltiptext#name-error {
+		left: 19%;
+		bottom: 85%;
+	}
+	.tooltiptext#email-error {
+		left: 84%;
+		bottom: 62%;
+	}
+	.tooltiptext#message-error {
+		left: 84%;
+		bottom: 41%;
+	}
+	.tooltiptext#email-error::after,
+	.tooltiptext#message-error::after {
+		bottom: 30%;
+		left: -5%;
+		border-left-color: transparent;
+		border-right-color: #ff5757;
 	}
 }
