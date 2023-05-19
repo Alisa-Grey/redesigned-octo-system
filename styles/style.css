@@ -26,6 +26,7 @@
 	--color-light: #fff;
 	--color-dark-blue: rgba(1, 1, 7, 0.47);
 	--color-error: #ff5722;
+	--color-success: #06a570;
 	--gap: 30px;
 	--margin-outer: 60px;
 	--margin-inner: 15px;
@@ -347,6 +348,7 @@ body {
 	color: var(--color-light);
 	border: 2px solid transparent;
 	background: linear-gradient(150deg, rgb(73, 28, 83), #463e6e);
+	background-repeat: no-repeat;
 	text-transform: uppercase;
 }
 .modal__close-btn {
@@ -377,6 +379,10 @@ body {
 	width: 90%;
 	margin: 0 auto;
 }
+.project-about {
+	flex-direction: column;
+	align-items: center;
+}
 .project__heading {
 	font-size: 40px;
 	text-align: center;
@@ -405,6 +411,7 @@ body {
 .project__img {
 	width: 30vw;
 	margin-left: var(--gap);
+	margin-top: 30px;
 }
 .open-form {
 	border-radius: 50px;
@@ -534,4 +541,74 @@ body {
 .tooltiptext.active {
 	visibility: visible;
 	opacity: 0.9;
+}
+/* email alert */
+.alert {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	padding: 30px;
+	background-color: #000;
+	z-index: 2;
+}
+.alert__inner {
+	padding: 0 20px;
+}
+.alert__heading {
+	text-transform: capitalize;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: auto;
+}
+.alert__heading.error {
+	color: var(--color-error);
+	position: relative;
+}
+.error {
+	box-shadow: 1px 1px 10px var(--color-error);
+}
+.success {
+	box-shadow: 1px 1px 10px var(--color-success);
+}
+.error .alert__heading {
+	color: var(--color-error);
+}
+.success .alert__heading {
+	color: var(--color-success);
+}
+.alert__text {
+	color: var(--color-text);
+	margin-bottom: 30px;
+}
+.alert__text:first-of-type {
+	padding-top: 2em;
+}
+.alert__close-btn {
+	position: absolute;
+	top: 6%;
+	right: 4%;
+	width: 20px;
+	height: 20px;
+}
+.alert__close-btn::before,
+.alert__close-btn::after {
+	position: absolute;
+	top: 0;
+	left: 9px;
+	content: ' ';
+	height: 20px;
+	width: 3px;
+	background-color: var(--color-text);
+}
+.alert__close-btn::before {
+	transform: rotate(45deg);
+}
+.alert__close-btn::after {
+	transform: rotate(-45deg);
 }

@@ -5,13 +5,13 @@ class ContactForm extends HTMLElement {
 	connectedCallback() {
 		this.innerHTML = `
     <div class="modal hidden">
-    // <form action="https://formsubmit.co/your@email.com" method="POST" class="contact-form" id="contact-form" novalidate>
     <form action="" class="contact-form" id="contact-form" novalidate>
       <button
         class="modal__close-btn btn-reset"
         aria-label="Close contact form"
       ></button>
-        <input type="hidden" name="_subject" value="New submission from company website">
+        <input type="hidden" name="_subject" value="New submission from [company] website">
+        // <input type="hidden" name="_captcha" value="false">
         <span class="tooltiptext" id="name-error"></span>
         <input
           id="name"

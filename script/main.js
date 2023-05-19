@@ -75,10 +75,10 @@ form.addEventListener('submit', (e) => {
 	let errors = [];
 	inputs.forEach((input) => {
 		let error = showError(input);
-		console.log('error', error);
 		if (error) errors.push(error);
 	});
 	if (!errors.length) {
+		sendMessage();
 		modal.classList.add('hidden');
 	}
 });
@@ -107,3 +107,49 @@ inputs.forEach((input) =>
 		errorMessage.classList.remove('active');
 	})
 );
+function sendMessage() {
+	fetch('https://formsubmit.co/ajax/ardian.delton@fullangle.org', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json;charset=utf-8',
+		},
+		body: JSON.stringify({
+			name: document.getElementById('name').value.trim(),
+			email: document.getElementById('email').value.trim(),
+			message: document.getElementById('message').value.trim(),
+		}),
+	})
+		.then(async (response) => {
+			const data = await response.json();
+			if (!response.ok) {
+				const error = data.error || response.status;
+				return Promise.reject(error);
+			}
+			document
+				.querySelector('.main')
+				.append(showAlert('success', data.message));
+		})
+		.catch((error) => {
+			console.error('There was an error!', error);
+			document.querySelector('.main').append(showAlert('error', error));
+		});
+}
+function showAlert(alertType, text) {
+	const alert = document.createElement('div');
+	alert.classList.add('alert', alertType);
+	alert.innerHTML = `
+	<h2 class="alert__heading">${
+		alertType === 'success' ? 'Thank your for emailing us' : 'Error'
+	}</h2>
+	<p class="alert__text">
+		${
+			typeof text === 'string'
+				? text.charAt(0).toUpperCase() + text.slice(1)
+				: 'Network error'
+		}
+	</p>`;
+	setTimeout(function () {
+		alert.parentNode.removeChild(alert);
+	}, 2000);
+	return alert;
+}
