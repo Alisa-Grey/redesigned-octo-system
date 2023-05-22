@@ -25,13 +25,14 @@
 	--color-link: #d1d1d1;
 	--color-light: #fff;
 	--color-dark-blue: rgba(1, 1, 7, 0.47);
-	--color-error: #ff5722;
-	--color-success: #06a570;
+	--color-error: 	#b65656;
+	--color-success: #3f6e5b;
+	/* --color-success: #65c44f; */
 	--gap: 30px;
 	--margin-outer: 60px;
 	--margin-inner: 15px;
 }
-*,
+*,#bd6589
 *::before,
 *::after {
 	box-sizing: border-box;
@@ -495,7 +496,7 @@ body {
 	width: 120px;
 	margin-left: -60px;
 	padding: 5px 0;
-	background-color: #ff5757;
+	background-color: var(--color-error);
 	border-radius: 6px;
 	color: #fff;
 	text-align: center;
