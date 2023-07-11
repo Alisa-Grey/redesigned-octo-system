@@ -10,7 +10,7 @@ class ContactForm extends HTMLElement {
         class="modal__close-btn btn-reset"
         aria-label="Close contact form"
       ></button>
-        <input type="hidden" name="_subject" value="New submission from [company] website">
+        <input type="hidden" name="_subject" value="New submission from 10z website">
         // <input type="hidden" name="_captcha" value="false">
         <span class="tooltiptext" id="name-error"></span>
         <input

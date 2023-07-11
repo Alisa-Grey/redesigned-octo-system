@@ -1,12 +1,12 @@
 @media screen and (max-width: 1200px) {
 	.nav {
 		position: absolute;
-		top: 55px;
+		top: 82px;
 		right: 16px;
 		width: 40vw;
 		height: auto;
 		padding: 20px;
-		background: linear-gradient(150deg, #1e104d 35%, rgba(21, 29, 41, 0.75));
+		background: linear-gradient(150deg, #1f2732fc 35%, rgb(62 94 101 / 98%));
 		z-index: 2;
 		transform: translateY(-350%);
 		transition: all 0.2s ease-out;
@@ -99,6 +99,9 @@
 	.section__heading {
 		font-size: 34px;
 	}
+	.section__subheading {
+		font-size: 30px;
+	}
 	.about {
 		padding: var(--margin-inner);
 	}
@@ -150,6 +153,9 @@
 	.hero__text--large,
 	.section__heading {
 		font-size: 27px;
+	}
+	.section__subheading {
+		font-size: 23px;
 	}
 	.container {
 		padding-left: 20px;

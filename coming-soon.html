@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<title>10z.ai</title>
+		<link rel="stylesheet" href="./styles/style.css" />
+		<link
+			media="screen and (max-width:1221px)"
+			rel="stylesheet"
+			href="./styles/media.css"
+		/>
+		<script src="./components/form.js"></script>
+	</head>
+  <body>
+    <header id="header" class="header">
+			<a href="https://10z.ai" class="link-reset"><img src="./assets/images/zlogo_resized.png" alt="company logo"  class="header__logo"/></a>
+			<label for="toggle-menu" class="burger__label">
+				<input
+					class="header__burger burger"
+					type="checkbox"
+					id="toggle-menu"
+					aria-label="Menu"
+				/>
+				<span class="burger__line burger__line1"></span>
+				<span class="burger__line burger__line2"></span>
+				<span class="burger__line burger__line3"></span>
+			</label>
+			<nav class="header__nav nav">
+				<ul class="nav-list nav__list list-reset">
+					<li class="nav-list__item">
+						<a href="index.html" class="nav-list__link link-reset">Home</a>
+					</li>
+					<li class="nav-list__item">
+						<button class="open-form link--filled btn-reset">Contact us</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+    <main class="main container" style="height: 100vh;">
+      <p align="center" class="section__heading"> Sorry</p>
+      <p align="center" class="section__subheading"> Coming soon</p>
+    </main>
+    <contact-form></contact-form>
+		<script src="./script/main.js"></script>
+  </body>
+</html>

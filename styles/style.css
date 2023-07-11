@@ -148,6 +148,9 @@ body {
 	font-weight: 700;
 	color: var(--color-light);
 }
+.section__subheading {
+	font-size: 52px;
+}
 .section__text {
 	width: 60%;
 	margin-bottom: 30px;
