@@ -4,6 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<title>[Company name]</title>
 		<link rel="stylesheet" href="./styles/style.css" />
 		<link
@@ -15,7 +20,7 @@
 	</head>
 	<body>
 		<header id="header" class="header">
-			<span class="header__logo"><a href="" class="link-reset">LOGO</a></span>
+		<a href="https://10z.ai" class="link-reset"><img src="./assets/images/zlogo_resized.png" alt="company logo"  class="header__logo"/></a>
 			<label for="toggle-menu" class="burger__label">
 				<input
 					class="header__burger burger"
@@ -37,13 +42,11 @@
 					</li>
 					<li class="nav-list__item">
 						<a href="#projects" class="nav-list__link link-reset"
-							>Project examples</a
-						>
+							>Project examples</a>
 					</li>
 					<li class="nav-list__item">
 						<a href="#research-interest" class="nav-list__link link-reset"
-							>Research interest</a
-						>
+							>Research interest</a>
 					</li>
 					<li class="nav-list__item">
 						<a href="#contacts" class="nav-list__link link-reset">Contact us</a>
@@ -83,11 +86,38 @@
 							ability to adapt to the ever-changing AI market.
 						</p>
 					</div>
-					<img
-						class="about__img"
-						src="./assets/images/aron-visuals-unsplash.jpg"
-						alt=""
+				<picture>
+					<source
+						media="(max-width: 450px)"
+						type="image/webp"
+						srcset="./assets/images/bg_02_300.webp"
 					/>
+					<source
+						media="(max-width:450px)"
+						type="image/png"
+						srcset="./assets/images/bg_02_300.png"
+					/>
+					<source
+						media="(min-width: 451px)"
+						type="image/webp"
+						srcset="./assets/images/bg_02_700.webp"
+					/>
+					<source
+						media="(min-width: 451px)"
+						type="image/png"
+						srcset="./assets/images/bg_02_700.png"
+					/>
+					<img
+					class="about__img"
+						src="./assets/images/heapp_games.png"
+						srcset="
+							./assets/images/bg_02_300.png  450w,
+							./assets/images/bg_02_700.png 451w,
+						"
+						sizes="(max-width: 450px) 450px, (min-width: 451px) 451px"
+						alt="dark foggy mountains"
+					/>
+				</picture>
 				</section>
 				<section id="projects" class="projects section">
 					<h2 class="about__heading section__heading">Project examples</h2>
@@ -97,40 +127,192 @@
 					</p>
 					<ul class="projects-list list-reset">
 						<li class="projects-list__item projects-item">
-							<a href="project1.html" class="project-item__link link-reset"></a>
-							<img
-								src="./assets/images/deepmind-unsplash.jpg"
-								alt=""
+							<a href="project1.html" class="project-item__link link-reset">new</a>
+							<picture>
+								<source
+									media="(max-width: 400px)"
+									type="image/webp"
+									srcset="./assets/images/new_350.webp"
+								/>
+								<source
+									media="(max-width:400px)"
+									type="image/jpg"
+									srcset="./assets/images/new_350.png"
+								/>
+								<source
+									media="(max-width: 1441px)"
+									type="image/webp"
+									srcset="./assets/images/new_480.webp"
+								/>
+								<source
+									media="(max-width:1441px)"
+									type="image/png"
+									srcset="./assets/images/new_480.png"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/webp"
+									srcset="./assets/images/new.webp"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/png"
+									srcset="./assets/images/new.png"
+								/>
+		
+								<img
 								class="project-item__img"
-							/>
-							<h3 class="projects-item__heading">Project 1</h3>
+									src="./assets/images/new.png"
+									srcset="
+										./assets/images/new_350.png  400w,
+										./assets/images/new_660.png 1441w,
+										./assets/images/new.png     1442w
+									"
+									sizes="(max-width: 400px) 400px, (max-width: 1441px) 1441px, (min-width: 1442px) 1442px"
+									alt="NewZ"
+								/>
+							</picture>
 						</li>
 						<li class="projects-list__item projects-item">
-							<a href="project1.html" class="project-item__link link-reset"></a>
-							<img
-								src="./assets/images/deepmind-unsplash.jpg"
-								alt=""
+							<a href="project1.html" class="project-item__link link-reset">novel</a>
+							<picture>
+								<source
+									media="(max-width: 400px)"
+									type="image/webp"
+									srcset="./assets/images/novel_350.webp"
+								/>
+								<source
+									media="(max-width:400px)"
+									type="image/jpg"
+									srcset="./assets/images/novel_350.png"
+								/>
+								<source
+									media="(max-width: 1441px)"
+									type="image/webp"
+									srcset="./assets/images/novel_480.webp"
+								/>
+								<source
+									media="(max-width:1441px)"
+									type="image/png"
+									srcset="./assets/images/novel_480.png"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/webp"
+									srcset="./assets/images/novel.webp"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/png"
+									srcset="./assets/images/novel.png"
+								/>
+		
+								<img
 								class="project-item__img"
-							/>
-							<h3 class="projects-item__heading">Project 1</h3>
+									src="./assets/images/novel.png"
+									srcset="
+										./assets/images/novel_350.png  400w,
+										./assets/images/novel_660.png 1441w,
+										./assets/images/novel.png     1442w
+									"
+									sizes="(max-width: 400px) 400px, (max-width: 1441px) 1441px, (min-width: 1442px) 1442px"
+									alt="NovelZ"
+								/>
+							</picture>
 						</li>
 						<li class="projects-list__item projects-item">
-							<a href="project1.html" class="project-item__link link-reset"></a>
-							<img
-								src="./assets/images/deepmind-unsplash.jpg"
-								alt=""
+							<a href="project1.html" class="project-item__link link-reset">review</a>
+							<picture>
+								<source
+									media="(max-width: 400px)"
+									type="image/webp"
+									srcset="./assets/images/review_350.webp"
+								/>
+								<source
+									media="(max-width:400px)"
+									type="image/jpg"
+									srcset="./assets/images/review_350.png"
+								/>
+								<source
+									media="(max-width: 1441px)"
+									type="image/webp"
+									srcset="./assets/images/review_480.webp"
+								/>
+								<source
+									media="(max-width:1441px)"
+									type="image/png"
+									srcset="./assets/images/review_480.png"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/webp"
+									srcset="./assets/images/review.webp"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/png"
+									srcset="./assets/images/review.png"
+								/>
+		
+								<img
 								class="project-item__img"
-							/>
-							<h3 class="projects-item__heading">Project 1</h3>
+									src="./assets/images/review.png"
+									srcset="
+										./assets/images/review_350.png  400w,
+										./assets/images/review_660.png 1441w,
+										./assets/images/review.png     1442w
+									"
+									sizes="(max-width: 400px) 400px, (max-width: 1441px) 1441px, (min-width: 1442px) 1442px"
+									alt="RevievZ"
+								/>
+							</picture>
 						</li>
 						<li class="projects-list__item projects-item">
-							<a href="project1.html" class="project-item__link link-reset"></a>
-							<img
-								src="./assets/images/deepmind-unsplash.jpg"
-								alt=""
+							<a href="project1.html" class="project-item__link link-reset">person</a>
+							<picture>
+								<source
+									media="(max-width: 400px)"
+									type="image/webp"
+									srcset="./assets/images/person_350.webp"
+								/>
+								<source
+									media="(max-width:400px)"
+									type="image/jpg"
+									srcset="./assets/images/person_350.png"
+								/>
+								<source
+									media="(max-width: 1441px)"
+									type="image/webp"
+									srcset="./assets/images/person_480.webp"
+								/>
+								<source
+									media="(max-width:1441px)"
+									type="image/png"
+									srcset="./assets/images/person_480.png"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/webp"
+									srcset="./assets/images/person.webp"
+								/>
+								<source
+									media="(min-width: 1442px)"
+									type="image/png"
+									srcset="./assets/images/person.png"
+								/>
+		
+								<img
 								class="project-item__img"
-							/>
-							<h3 class="projects-item__heading">Project 1</h3>
+									src="./assets/images/person.png"
+									srcset="
+										./assets/images/person_350.png  400w,
+										./assets/images/person_660.png 1441w,
+										./assets/images/person.png     1442w
+									"
+									sizes="(max-width: 400px) 400px, (max-width: 1441px) 1441px, (min-width: 1442px) 1442px"
+									alt="PersonZ"
+								/>
+							</picture>
 						</li>
 					</ul>
 				</section>
